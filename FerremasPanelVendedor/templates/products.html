@@ -1,0 +1,32 @@
+<!-- FerremasVendedorV2/templates/products.html -->
+<!doctype html>
+<html>
+    <head>
+        <title>Productos</title>
+    </head>
+    <body>
+        <h1>Lista de Productos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Clase</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td>{{ product._id }}</td>
+                    <td>{{ product.nombre }}</td>
+                    <td>{{ product.precio }}</td>
+                    <td>{{ product.stock }}</td>
+                    <td>{{ product._class }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
