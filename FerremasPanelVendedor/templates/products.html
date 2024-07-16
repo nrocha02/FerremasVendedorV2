@@ -1,32 +1,39 @@
-<!-- FerremasVendedorV2/templates/products.html -->
 <!doctype html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
         <title>Productos</title>
     </head>
     <body>
-        <h1>Lista de Productos</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Stock</th>
-                    <th>Clase</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div class="container">
+            <div class="row">
                 {% for product in products %}
-                <tr>
-                    <td>{{ product._id }}</td>
-                    <td>{{ product.nombre }}</td>
-                    <td>{{ product.precio }}</td>
-                    <td>{{ product.stock }}</td>
-                    <td>{{ product._class }}</td>
-                </tr>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.nombre }}</h5>
+                            <p class="card-text">
+                                Precio: ${{ product.precio }}
+                            </p>
+                            <p class="card-text">Stock: {{ product.stock }}</p>
+                            <a
+                                href="{% url 'comprar_producto' product_id=product.id %}"
+                                class="btn btn-primary"
+                                >Comprar</a
+                            >
+                        </div>
+                    </div>
+                </div>
                 {% endfor %}
-            </tbody>
-        </table>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </body>
 </html>
