@@ -8,7 +8,7 @@ def products_view(request):
     url = "https://sa-east-1.aws.data.mongodb-api.com/app/data-iutfwvi/endpoint/data/v1/action/find"
     headers = {
         "Content-Type": "application/json",
-        "api-key": "BX38WZpxoNFIKBnBB8nb8ziZRCIKZaCOXcmf2oQu7JNYDZbLDQ11aJeVpGVevasW"
+        "api-key": settings.MONGODB_API_KEY
     }
     payload = {
         "dataSource": "FerremasCluster",
@@ -29,7 +29,7 @@ def comprar_producto(request, product_id):
     url = "https://sa-east-1.aws.data.mongodb-api.com/app/data-iutfwvi/endpoint/data/v1/action/findOne"
     headers = {
         "Content-Type": "application/json",
-        "api-key": "BX38WZpxoNFIKBnBB8nb8ziZRCIKZaCOXcmf2oQu7JNYDZbLDQ11aJeVpGVevasW"
+        "api-key": settings.MONGODB_API_KEY
     }
     payload = {
         "dataSource": "FerremasCluster",
@@ -82,7 +82,7 @@ def pago_exitoso(request):
             url = "https://sa-east-1.aws.data.mongodb-api.com/app/data-iutfwvi/endpoint/data/v1/action/updateOne"
             headers = {
                 "Content-Type": "application/json",
-                "api-key": "BX38WZpxoNFIKBnBB8nb8ziZRCIKZaCOXcmf2oQu7JNYDZbLDQ11aJeVpGVevasW"
+                "api-key": settings.MONGODB_API_KEY
             }
             payload = {
                 "dataSource": "FerremasCluster",

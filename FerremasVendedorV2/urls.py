@@ -23,7 +23,7 @@ from django.urls import path
 from .views import products_view, comprar_producto, pago_exitoso
 
 urlpatterns = [
-    path('products/', products_view, name='products'),
+    path('', products_view, name='products'),
     path('comprar/<str:product_id>/', comprar_producto, name='comprar_producto'),
     path('pago_exitoso/', pago_exitoso, name='pago_exitoso'),
 ]
